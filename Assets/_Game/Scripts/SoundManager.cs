@@ -22,16 +22,19 @@ public class SoundManager : MonoBehaviour
             Instance = this;
         }
     }
-    public void PlaySound(AudioClip audioClip){
+    public void PlaySound(AudioClip audioClip)
+    {
         audioSource.clip = audioClip;
         audioSource.Play();
     }
 
-    public void PlaySoundTrue(AudioClip audioClip){
+    public void PlaySoundTrue(AudioClip audioClip)
+    {
         StartCoroutine(CoPlaySound(audioClip));
     }
 
-    IEnumerator CoPlaySound(AudioClip audioClip){
+    IEnumerator CoPlaySound(AudioClip audioClip)
+    {
         PlaySound(clipTing);
         yield return new WaitForSeconds(clipTing.length);
         PlaySound(audioClip);

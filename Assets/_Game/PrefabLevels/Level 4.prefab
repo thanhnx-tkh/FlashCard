@@ -295,9 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4fcc214344842c4a2caa72751db7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 1
+  Id: 0
   currentType: 0
-  audioClip: {fileID: 8300000, guid: 00cacb58ceb1e4682bca895622898df1, type: 3}
+  audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
   level: {fileID: 1857688761905348252}
   text: {fileID: 6047038975761858078}
   image: {fileID: 4908570658977721427}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 3491376838507178401}
   - component: {fileID: 1857688761905348252}
   m_Layer: 5
-  m_Name: Level 1
+  m_Name: Level 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 33115dc197c8846388c89a22fecfc859, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cca57471be22a4cc28594c8d617eafc1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -795,7 +795,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mom
+  m_Text: baby
 --- !u!1 &4605712021194872512
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,9 +953,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4fcc214344842c4a2caa72751db7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 1
   currentType: 0
-  audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
+  audioClip: {fileID: 8300000, guid: 00cacb58ceb1e4682bca895622898df1, type: 3}
   level: {fileID: 1857688761905348252}
   text: {fileID: 8897072621391021355}
   image: {fileID: 224914861060327941}
@@ -989,7 +989,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6699485757876522807}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cca57471be22a4cc28594c8d617eafc1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33115dc197c8846388c89a22fecfc859, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1508,4 +1508,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BABY
+  m_Text: mom

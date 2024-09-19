@@ -36,6 +36,11 @@ public class Card : MonoBehaviour
         text.enabled = false;
         ChangeAnim(Constants.ANIM_IDLE);
     }
+     public void ResetCard()
+    {
+        image.enabled = false;
+        text.enabled = false;
+    }
 
     public void ChangeAnim(string animName)
     {
@@ -49,8 +54,20 @@ public class Card : MonoBehaviour
     public void FlipCard()
     {
         if (!level.IsIdle) return;
+
         //Play Sound
         SoundManager.Instance.PlaySound(audioClip);
+
+        StartCoroutine(CoSelectCardType());
+        
+    }
+    private IEnumerator CoSelectCardType(){
+
+        ChangeAnim(Constants.ANIM_FLIP);
+
+        yield return new WaitForSeconds(0.5f);
+
+        
         if (currentType == Type.Img)
         {
             image.enabled = true;
@@ -65,6 +82,11 @@ public class Card : MonoBehaviour
         {
             Debug.LogWarning("Error");
         }
+
+        yield return new WaitForSeconds(0.5f);
+
+        ChangeAnim(Constants.ANIM_IDLE);
+
     }
     private void LogicFlipCard()
     {

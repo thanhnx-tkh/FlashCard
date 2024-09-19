@@ -7,9 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public GameObject[] arrayUI;
     public Button buttonPlay;
-    public Button buttonRetry;
-    public Button buttonRetry1;
-    public Button buttonNextLevel;
+    public Button buttonRetryInLose;
+    public Button buttonRetryInWin;
 
     public static UIManager Instance { get; private set; }
 
@@ -30,11 +29,28 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         buttonPlay.onClick.AddListener(ButtonPlay);
-        buttonRetry.onClick.AddListener(ButtonRetry);
-        buttonRetry1.onClick.AddListener(ButtonRetry);
-        buttonNextLevel.onClick.AddListener(ButtonNext);
+        buttonRetryInLose.onClick.AddListener(ButtonRetry);
+        buttonRetryInWin.onClick.AddListener(ButtonRetry);
+
+        // Active UI Start
         ActiveUI(0);
     }
+
+    public void ButtonPlay()
+    {
+        LevelManager.Instance.LoadLevel(0);
+
+        // Active UI GamePlay
+        ActiveUI(3);
+    }
+    public void ButtonRetry()
+    {
+        LevelManager.Instance.RetryLevel();
+        
+        // Active UI GamePlay        
+        ActiveUI(3);
+    }
+
     public void ActiveUI(int indexUi)
     {
         for (int i = 0; i < arrayUI.Length; i++)
@@ -42,22 +58,5 @@ public class UIManager : MonoBehaviour
             arrayUI[i].SetActive(false);
         }
         arrayUI[indexUi].SetActive(true);
-    }
-    public void ButtonPlay()
-    {
-        LevelManager.Instance.LoadLevel(0);
-        ActiveUI(4);
-    }
-    public void ButtonRetry()
-    {
-        LevelManager.Instance.RetryLevel();
-        ActiveUI(4);
-
-    }
-    public void ButtonNext()
-    {
-        LevelManager.Instance.NextLevel();
-        ActiveUI(4);
-
     }
 }

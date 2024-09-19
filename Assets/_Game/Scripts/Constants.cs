@@ -7,4 +7,6 @@ public class Constants : MonoBehaviour
     public const string ANIM_VIBRATE = "Vibrate";
     public const string ANIM_IDLE = "Idle";
     public const string ANIM_MOVE = "Move";
+    public const string ANIM_FLIP = "Flip";
+
 }

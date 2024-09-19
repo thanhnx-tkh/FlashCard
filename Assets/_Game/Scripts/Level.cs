@@ -12,13 +12,12 @@ public class Level : MonoBehaviour
 
     private float timeCount;
     private float time;
-
-    public int count;
+    public int NumberOfPlays { get; set; }
 
     [SerializeField] private GameObject iconHand;
     private void Start()
     {
-        count=0;
+        NumberOfPlays = 0;
         timeCount = 0f;
         time = 5f;
         iconHand.SetActive(false);
@@ -49,7 +48,8 @@ public class Level : MonoBehaviour
         iconHand.SetActive(false);
 
         if (cardsLogic.Count <= 1) return;
-        count++;
+        NumberOfPlays++;
+        LevelManager.Instance.UITextNumberOfPlays();
         IsIdle = false;
 
         if (cardsLogic[0].Id == cardsLogic[1].Id)
@@ -67,11 +67,18 @@ public class Level : MonoBehaviour
         {
             ActiveIconHand();
         }
-        if(cards.Count == 0) LevelManager.Instance.NextLevel();
-        //lose
-        if(count == 4) UIManager.Instance.ActiveUI(1);
+        if (cards.Count == 0) StartCoroutine(CoNextLevel());
     }
+    IEnumerator CoNextLevel(){
 
+        yield return new WaitForSeconds(1f);
+        UIManager.Instance.ActiveUI(4);
+        LevelManager.Instance.UITextNextLevel();
+
+        yield return new WaitForSeconds(1f);
+        LevelManager.Instance.NextLevel();
+
+    }
     private void ActiveIconHand()
     {
         if (cards.Count == 0) return;
@@ -82,38 +89,57 @@ public class Level : MonoBehaviour
     private IEnumerator CODestroyCard(Card card1, Card card2)
     {
         SoundManager.Instance.PlaySoundTrue(card1.audioClip);
+
         yield return new WaitForSeconds(1f);
+
         cardsLogic.Remove(card1);
         cardsLogic.Remove(card2);
         cards.Remove(card1);
         cards.Remove(card2);
-        Destroy(card1.gameObject);
+        Destroy(card1.gameObject);  
         Destroy(card2.gameObject);
         IsIdle = true;
     }
 
     private IEnumerator COResetCard()
     {
-        yield return new WaitForSeconds(0.5f);
-        int indexRandom = Random.Range(1,3);
+        yield return new WaitForSeconds(1f);
+        int indexRandom = Random.Range(1, 3);
 
-            switch (indexRandom)
-            {
-                case 1: 
-                    SoundManager.Instance.PlaySoundError();
-                    cardsLogic[0].ChangeAnim(Constants.ANIM_VIBRATE);
-                    cardsLogic[1].ChangeAnim(Constants.ANIM_VIBRATE);
-                    break; 
-                case 2:
-                    SoundManager.Instance.PlayRandomSoundFalse();
-                    break;
-            }
+        switch (indexRandom)
+        {
+            case 1:
+                SoundManager.Instance.PlaySoundError();
 
+                cardsLogic[1].ChangeAnim(Constants.ANIM_VIBRATE);
+                cardsLogic[0].ChangeAnim(Constants.ANIM_VIBRATE);
+
+                break;
+            case 2:
+                SoundManager.Instance.PlayRandomSoundFalse();
+                break;
+        }
 
         yield return new WaitForSeconds(1f);
-        cardsLogic[0].OnInit();
-        cardsLogic[1].OnInit();
+        cardsLogic[1].ChangeAnim(Constants.ANIM_FLIP);
+        cardsLogic[0].ChangeAnim(Constants.ANIM_FLIP);
+
+        yield return new WaitForSeconds(0.5f);
+        cardsLogic[0].ResetCard();
+        cardsLogic[1].ResetCard();
+
+        yield return new WaitForSeconds(0.5f);
+        cardsLogic[1].ChangeAnim(Constants.ANIM_IDLE);
+        cardsLogic[0].ChangeAnim(Constants.ANIM_IDLE);
         cardsLogic.Clear();
+
         IsIdle = true;
+
+        //Active UI lose and logic lose
+        if (NumberOfPlays == 3)
+        {
+            UIManager.Instance.ActiveUI(1);
+            LevelManager.Instance.Lose();
+        }
     }
 }
