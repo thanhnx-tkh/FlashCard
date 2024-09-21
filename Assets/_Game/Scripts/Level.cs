@@ -67,7 +67,6 @@ public class Level : MonoBehaviour
         iconHand.SetActive(false);
 
         if (cardsLogic.Count <= 1) return;
-        LevelManager.Instance.UITextNumberOfPlays();
         IsIdle = false;
 
         if (cardsLogic[0].Id == cardsLogic[1].Id)
@@ -75,7 +74,6 @@ public class Level : MonoBehaviour
             StartCoroutine(CODestroyCard(cardsLogic[0], cardsLogic[1]));
             return;
         }
-        NumberOfPlays++;
         StartCoroutine(COResetCard());
 
     }
@@ -123,6 +121,8 @@ public class Level : MonoBehaviour
 
     private IEnumerator COResetCard()
     {
+        NumberOfPlays++;
+        LevelManager.Instance.UITextNumberOfPlays();
         yield return new WaitForSeconds(1f);
         int indexRandom = Random.Range(1, 3);
 

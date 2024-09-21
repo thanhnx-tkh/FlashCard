@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public Button buttonPlay;
     public Button buttonRetryInLose;
     public Button buttonRetryInWin;
+    public Image bGGamePlay;
+    public List<Sprite> spritesBG;
 
     public static UIManager Instance { get; private set; }
 
@@ -56,6 +58,9 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < arrayUI.Length; i++)
         {
             arrayUI[i].SetActive(false);
+            if(i==3){
+                bGGamePlay.sprite = spritesBG[Random.Range(0,spritesBG.Count)];
+            }
         }
         arrayUI[indexUi].SetActive(true);
     }
