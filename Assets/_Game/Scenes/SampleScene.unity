@@ -1714,6 +1714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f1c71f04b34fcc80a22901dd988a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soData: {fileID: 11400000, guid: 2e4ecc82ff3674ddab032fe5d0f6b573, type: 2}
   PrefabLevels:
   - {fileID: 1857688761905348252, guid: 6d1e0d7b3b03e46c8938ce3062045a73, type: 3}
   - {fileID: 1857688761905348252, guid: cbf92912e459b428599d53e63f1cc6bf, type: 3}

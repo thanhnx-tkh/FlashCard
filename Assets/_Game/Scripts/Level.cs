@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    public int Id;
     public List<Card> cards;
 
     public List<Card> cardsLogic;
@@ -22,22 +23,40 @@ public class Level : MonoBehaviour
         time = 5f;
         iconHand.SetActive(false);
         IsIdle = true;
-        StartCoroutine(AnimShuffle());
+
+        // thực hiện lập bài, tráo bài
+        StartCoroutine(CoAnimStart());
     }
-    public IEnumerator AnimShuffle()
+
+    public IEnumerator CoAnimStart()
     {
         IsIdle = false;
+        StartCoroutine(AnimFlipStart());
+        yield return new WaitForSeconds(4f);
+        StartCoroutine(AnimShuffle());
+    }
+    public IEnumerator AnimFlipStart()
+    {
         yield return new WaitForSeconds(0.5f);
+
         for (int i = 0; i < cards.Count; i++)
         {
-            cards[i].ChangeAnim(Constants.ANIM_MOVE);
+            StartCoroutine(cards[i].CoAnimFlipStart());
         }
-        yield return new WaitForSeconds(2f);
+    }
+
+    public IEnumerator AnimShuffle()
+    {
+        yield return new WaitForSeconds(0.5f);
+        ShuffleCard();
         for (int i = 0; i < cards.Count; i++)
         {
-            cards[i].ChangeAnim(Constants.ANIM_IDLE);
+            cards[i].AnimShuffle();
         }
+        timeCount = 0f;
+        yield return new WaitForSeconds(0.5f);
         IsIdle = true;
+
 
     }
 
@@ -48,7 +67,6 @@ public class Level : MonoBehaviour
         iconHand.SetActive(false);
 
         if (cardsLogic.Count <= 1) return;
-        NumberOfPlays++;
         LevelManager.Instance.UITextNumberOfPlays();
         IsIdle = false;
 
@@ -57,6 +75,7 @@ public class Level : MonoBehaviour
             StartCoroutine(CODestroyCard(cardsLogic[0], cardsLogic[1]));
             return;
         }
+        NumberOfPlays++;
         StartCoroutine(COResetCard());
 
     }
@@ -69,7 +88,8 @@ public class Level : MonoBehaviour
         }
         if (cards.Count == 0) StartCoroutine(CoNextLevel());
     }
-    IEnumerator CoNextLevel(){
+    IEnumerator CoNextLevel()
+    {
 
         yield return new WaitForSeconds(1f);
         UIManager.Instance.ActiveUI(4);
@@ -96,7 +116,7 @@ public class Level : MonoBehaviour
         cardsLogic.Remove(card2);
         cards.Remove(card1);
         cards.Remove(card2);
-        Destroy(card1.gameObject);  
+        Destroy(card1.gameObject);
         Destroy(card2.gameObject);
         IsIdle = true;
     }
@@ -142,4 +162,27 @@ public class Level : MonoBehaviour
             LevelManager.Instance.Lose();
         }
     }
+
+    public void ShuffleCard()
+    {
+        LevelData levelData = LevelManager.Instance.soData.GetLevelData(Id);
+        List<ItemCard> cardsData = levelData.cards;
+        Shuffle(cardsData);
+        for (int i = 0; i < cardsData.Count; i++)
+        {
+            ItemCard itemCard = cardsData[i];
+            cards[i].OnInit(itemCard.id, itemCard.type, itemCard.audioClip, itemCard.name, itemCard.sprite);
+        }
+    }
+    public void Shuffle(List<ItemCard> list)
+    {
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+            ItemCard temp = list[i];
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
+        }
+    }
+
 }

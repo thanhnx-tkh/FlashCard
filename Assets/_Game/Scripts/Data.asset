@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23493f07dc50a463f9f868d68792b286, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: 
+  levels:
+  - cards:
+    - id: 0
+      type: 0
+      audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
+      name: Baby
+      sprite: {fileID: 21300000, guid: cca57471be22a4cc28594c8d617eafc1, type: 3}
+    - id: 1
+      type: 1
+      audioClip: {fileID: 8300000, guid: 00cacb58ceb1e4682bca895622898df1, type: 3}
+      name: Mom
+      sprite: {fileID: 21300000, guid: 33115dc197c8846388c89a22fecfc859, type: 3}
+    - id: 0
+      type: 1
+      audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
+      name: Baby
+      sprite: {fileID: 21300000, guid: cca57471be22a4cc28594c8d617eafc1, type: 3}
+    - id: 1
+      type: 0
+      audioClip: {fileID: 8300000, guid: 00cacb58ceb1e4682bca895622898df1, type: 3}
+      name: Mom
+      sprite: {fileID: 21300000, guid: 33115dc197c8846388c89a22fecfc859, type: 3}
+  - cards:
+    - id: 0
+      type: 0
+      audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
+      name: Baby
+      sprite: {fileID: 21300000, guid: cca57471be22a4cc28594c8d617eafc1, type: 3}
+    - id: 0
+      type: 1
+      audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
+      name: Baby
+      sprite: {fileID: 21300000, guid: cca57471be22a4cc28594c8d617eafc1, type: 3}
+    - id: 2
+      type: 1
+      audioClip: {fileID: 8300000, guid: 1da475c1725074628bf625ee1955d1fe, type: 3}
+      name: Dad
+      sprite: {fileID: 21300000, guid: 55753012117164ec08e3b78e98137a5d, type: 3}
+    - id: 2
+      type: 0
+      audioClip: {fileID: 8300000, guid: 1da475c1725074628bf625ee1955d1fe, type: 3}
+      name: Dad
+      sprite: {fileID: 21300000, guid: 55753012117164ec08e3b78e98137a5d, type: 3}
+  - cards:
+    - id: 1
+      type: 1
+      audioClip: {fileID: 8300000, guid: 00cacb58ceb1e4682bca895622898df1, type: 3}
+      name: Mom
+      sprite: {fileID: 21300000, guid: 33115dc197c8846388c89a22fecfc859, type: 3}
+    - id: 1
+      type: 0
+      audioClip: {fileID: 8300000, guid: 00cacb58ceb1e4682bca895622898df1, type: 3}
+      name: Mom
+      sprite: {fileID: 21300000, guid: 33115dc197c8846388c89a22fecfc859, type: 3}
+    - id: 2
+      type: 1
+      audioClip: {fileID: 8300000, guid: 1da475c1725074628bf625ee1955d1fe, type: 3}
+      name: Dad
+      sprite: {fileID: 21300000, guid: 55753012117164ec08e3b78e98137a5d, type: 3}
+    - id: 2
+      type: 0
+      audioClip: {fileID: 8300000, guid: 1da475c1725074628bf625ee1955d1fe, type: 3}
+      name: Dad
+      sprite: {fileID: 21300000, guid: 55753012117164ec08e3b78e98137a5d, type: 3}
+  - cards:
+    - id: 0
+      type: 1
+      audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
+      name: Baby
+      sprite: {fileID: 21300000, guid: cca57471be22a4cc28594c8d617eafc1, type: 3}
+    - id: 0
+      type: 0
+      audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
+      name: Baby
+      sprite: {fileID: 21300000, guid: cca57471be22a4cc28594c8d617eafc1, type: 3}
+    - id: 1
+      type: 1
+      audioClip: {fileID: 8300000, guid: 00cacb58ceb1e4682bca895622898df1, type: 3}
+      name: Mom
+      sprite: {fileID: 21300000, guid: 33115dc197c8846388c89a22fecfc859, type: 3}
+    - id: 1
+      type: 0
+      audioClip: {fileID: 8300000, guid: 00cacb58ceb1e4682bca895622898df1, type: 3}
+      name: Mom
+      sprite: {fileID: 21300000, guid: 33115dc197c8846388c89a22fecfc859, type: 3}

@@ -196,9 +196,9 @@ RectTransform:
   - {fileID: 2676201759022892838}
   m_Father: {fileID: 6374173332155951059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -75, y: 75}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: -115}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3886332661473210799
@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4fcc214344842c4a2caa72751db7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   Id: 0
   currentType: 0
   audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}
@@ -361,9 +362,9 @@ RectTransform:
   - {fileID: 1331618079881270214}
   m_Father: {fileID: 6374173332155951059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 75, y: 75}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100, y: -115}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1503670486623892736
@@ -460,6 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4fcc214344842c4a2caa72751db7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   Id: 2
   currentType: 0
   audioClip: {fileID: 8300000, guid: 1da475c1725074628bf625ee1955d1fe, type: 3}
@@ -635,6 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e7601b885664f728c8b9046bde53f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   cards:
   - {fileID: 8094056761456926785}
   - {fileID: 687991921781026366}
@@ -833,9 +836,9 @@ RectTransform:
   - {fileID: 5685657505887003466}
   m_Father: {fileID: 6374173332155951059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -75, y: -75}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: 115}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3231231479951984549
@@ -953,6 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4fcc214344842c4a2caa72751db7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   Id: 2
   currentType: 1
   audioClip: {fileID: 8300000, guid: 1da475c1725074628bf625ee1955d1fe, type: 3}
@@ -998,9 +1002,9 @@ RectTransform:
   - {fileID: 1792682173929389275}
   m_Father: {fileID: 6374173332155951059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -75}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100, y: 115}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &280133209827582359
@@ -1118,6 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4fcc214344842c4a2caa72751db7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   Id: 0
   currentType: 1
   audioClip: {fileID: 8300000, guid: 8180d963094c0456693f3b6fb31def95, type: 3}

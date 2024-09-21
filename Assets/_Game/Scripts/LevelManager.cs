@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    public SOData soData;
     public List<Level> PrefabLevels;
     public Level curLevel;
     public int indexLevel;
